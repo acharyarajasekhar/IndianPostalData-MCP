@@ -68,6 +68,22 @@ Contributions are welcome! Please:
 
 Make sure the test suite passes and the server starts successfully.
 
+## 🛠️ ModelContext Protocol Inspector
+
+You can inspect the running server with the ModelContext Protocol inspector.
+
+**Option A:** Run it against your compiled .NET EXE binary
+
+```bash
+npx @modelcontextprotocol/inspector path\\to\\your\\bin\\Debug\\net8.0\\MyMcpServer.exe
+```
+
+**Option B:** Run it using the dotnet CLI directly
+
+```bash
+npx @modelcontextprotocol/inspector dotnet run --project path\\to\\MyMcpServer.csproj
+```
+
 ## 📞 Support
 
 For issues or questions, open an issue on the repository or contact the maintainer.
