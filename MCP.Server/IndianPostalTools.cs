@@ -1,6 +1,3 @@
-// This file previously contained ModelContextProtocol server tool definitions.
-// The project no longer uses the pincode validation tool, so the contents are removed.
-// Keeping an empty placeholder ensures the project builds without errors.
 using MCP.Server.Services;
 using ModelContextProtocol.Server;
 using System.ComponentModel;
@@ -8,7 +5,7 @@ using System.Text.Json;
 
 namespace MCP.Server;
 
-[McpServerToolType]  // Note: Attribute name changed in stable version
+[McpServerToolType]
 public class PincodeTools
 {
     private readonly IPostalDataService _postalDataService;
