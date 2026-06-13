@@ -9,7 +9,7 @@ namespace MCP.Server;
 /// string. Clients can request the prompt by name and then feed the resulting
 /// prompt to an LLM or another tool.
 /// </summary>
-[McpServerToolType]
+[McpServerPromptType]
 public class PincodePrompts
 {
     private readonly ILogger<PincodePrompts> _logger;
