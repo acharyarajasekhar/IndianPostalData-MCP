@@ -43,4 +43,30 @@ public class PincodeTools
         };
         return JsonSerializer.Serialize(response);
     }
+    
+    
+    [McpServerTool]
+    [Description("Get post offices matching a given post office name (case-insensitive)")]
+    public async Task<string> GetPostOfficesByName(
+        [Description("Name of the post office (e.g., 'Connaught Place')")]
+        string name,
+        CancellationToken cancellationToken = default)
+    {
+        var result = await _postalDataService.GetPostOfficeByCityAsync(name, cancellationToken);
+        if (!result.Success)
+        {
+            var err = new { success = false, error = result.ErrorMessage ?? "Unknown error", name };
+            return JsonSerializer.Serialize(err);
+        }
+
+        var response = new
+        {
+            success = true,
+            name = name,
+            message = result.Data?.Message,
+            status = result.Data?.Status,
+            postOffices = result.Data?.PostOffice
+        };
+        return JsonSerializer.Serialize(response);
+    }
 }
