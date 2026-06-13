@@ -1,0 +1,38 @@
+# .NET / Visual Studio
+bin/
+obj/
+out/
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio
+.vs/
+*.user
+*.useroscache
+*.sln.docstates
+
+# User-specific files
+*.suo
+*.user
+*.useroscache
+*.sln.docstates
+
+# NuGet Packages
+packages/
+*.nuget.props
+*.nuget.targets
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment secrets
+.env
+.env.*
+```
