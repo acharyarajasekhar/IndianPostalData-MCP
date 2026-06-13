@@ -10,11 +10,10 @@ builder.Services.AddHealthChecks();
 
 builder.Services.AddMcpServer()
     .WithHttpTransport()
-    .WithStdioServerTransport()  // For Claude Desktop
-    .WithTools<PincodeTools>()   // Register all tools from this class
+    .WithStdioServerTransport()
     .WithToolsFromAssembly()
-    .WithResources<PincodeResources>()
-    .WithResourcesFromAssembly(); // Register static resources
+    .WithResourcesFromAssembly()
+    .WithPromptsFromAssembly();
 
 builder.Services.AddCors();
 
