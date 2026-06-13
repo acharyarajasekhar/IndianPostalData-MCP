@@ -75,13 +75,13 @@ You can inspect the running server with the ModelContext Protocol inspector.
 **Option A:** Run it against your compiled .NET EXE binary
 
 ```bash
-npx @modelcontextprotocol/inspector path\\to\\your\\bin\\Debug\\net8.0\\MyMcpServer.exe
+npx @modelcontextprotocol/inspector MCP.Server/bin/Debug/net8.0/MCP.Server.exe
 ```
 
 **Option B:** Run it using the dotnet CLI directly
 
 ```bash
-npx @modelcontextprotocol/inspector dotnet run --project path\\to\\MyMcpServer.csproj
+npx @modelcontextprotocol/inspector dotnet run --project MCP.Server/MCP.Server.csproj
 ```
 
 ## 📞 Support
