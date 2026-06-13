@@ -9,10 +9,20 @@ builder.Services.AddHttpClient<IPostalDataService, PostalDataService>();
 builder.Services.AddHealthChecks();
 
 builder.Services.AddMcpServer()
+    .WithHttpTransport()
     .WithStdioServerTransport()  // For Claude Desktop
-    .WithTools<PincodeTools>();   // Register all tools from this class
+    .WithTools<PincodeTools>()   // Register all tools from this class
+    .WithToolsFromAssembly(); // Register all tools from this assembly
+
+builder.Services.AddCors();
 
 var app = builder.Build();
+
+// 2. Enable CORS if needed by your AI client
+app.UseCors(policy => policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+
+// 3. THIS IS THE CORRECT METHOD: Mounts the entire MCP server protocol route
+app.MapMcp("/mcp");
 
 // Configure the HTTP request pipeline.
 app.MapHealthChecks("/health");

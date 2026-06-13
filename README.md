@@ -31,6 +31,10 @@ dotnet build
 # Run the API (development mode)
 # The server will start on a random port; check the console output for the URL.
  dotnet watch run --project MCP.Server\MCP.Server.csproj
+# dotnet watch run --project MCP.Server/MCP.Server.csproj --urls "http://localhost:5000" 
+# Run with Claude MCP:
+# claude mcp add --scope user --transport stdio indian-postal-data-server -- dotnet run --project "C:\src\IndianPostalData-MCP\MCP.Server\MCP.Server.csproj"
+# claude mcp add --scope user --transport http indian-postal-data-server http://localhost:5000/mcp
 ```
 
 The health endpoint is available at `http://localhost:<port>/health` and a simple root message at `/`.
