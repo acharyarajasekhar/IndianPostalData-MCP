@@ -1,38 +1,54 @@
-# .NET / Visual Studio
+# .NET
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+*.vspscc
+*.vssscc
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build directories
 bin/
 obj/
-out/
-[Bb]in/
-[Oo]bj/
 
 # Visual Studio
 .vs/
-*.user
-*.useroscache
-*.sln.docstates
+.idea/
+# Rider
+*.sln.iml
 
-# User-specific files
-*.suo
-*.user
-*.useroscache
-*.sln.docstates
+# VSCode
+.vscode/
 
 # NuGet Packages
+*.nupkg
+*.snupkg
+*.nuspec
+# Package restore directory
 packages/
-*.nuget.props
-*.nuget.targets
 
-# OS generated files
-.DS_Store
-Thumbs.db
+# Resharper
+_ReSharper*
+*.DotSettings.user
 
-# IDEs
-.vscode/
-.idea/
-*.swp
-*.swo
+# DotNet user secrets
+secrets.json
 
-# Environment secrets
-.env
-.env.*
-```
+# ASP.NET Core development certificates
+time-limited-data
+
+# Test results
+TestResults/
+*/TestResults/*
+
+# Coverage files
+coverage*
+*.coverage
+*.coveragexml
+
+# Server logs
+logs/
