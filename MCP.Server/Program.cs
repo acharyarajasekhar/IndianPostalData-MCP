@@ -1,4 +1,5 @@
 using MCP.Server.Services;
+using MCP.Server;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddMemoryCache();
 builder.Services.AddHttpClient<IPostalDataService, PostalDataService>();
 builder.Services.AddHealthChecks();
+
+builder.Services.AddMcpServer()
+    .WithStdioServerTransport()  // For Claude Desktop
+    .WithTools<PincodeTools>();   // Register all tools from this class
 
 var app = builder.Build();
 
