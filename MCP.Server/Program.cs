@@ -12,7 +12,9 @@ builder.Services.AddMcpServer()
     .WithHttpTransport()
     .WithStdioServerTransport()  // For Claude Desktop
     .WithTools<PincodeTools>()   // Register all tools from this class
-    .WithToolsFromAssembly(); // Register all tools from this assembly
+    .WithToolsFromAssembly()
+    .WithResources<PincodeResources>()
+    .WithResourcesFromAssembly(); // Register static resources
 
 builder.Services.AddCors();
 
